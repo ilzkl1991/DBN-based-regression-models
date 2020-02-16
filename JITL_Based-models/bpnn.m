@@ -8,14 +8,11 @@ clear
 
 %找出训练数据和预测数据
 A=xlsread('12.xlsx');
-[~,n]=size(A);
-rowrank = randperm(size(A, 1)); 
-B = A(rowrank, :);
-input_train1=B(2:350,1:9);
-output_train1=B(2:350,10);
+input_train1=A(2:350,1:9);
+output_train1=A(2:350,10);
 
-input_test1=B(351:400,1:9);
-output_test1=B(351:400,10);
+input_test1=A(351:400,1:9);
+output_test1=A(351:400,10);
 input_train=input_train1';
 input_test=input_test1';
 output_train=output_train1';

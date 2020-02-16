@@ -59,10 +59,7 @@ BPoutput=an;
 error2=BPoutput-output_test;
 
 net=newff(minmax(inputn),[25,1],{'tansig','purelin'},'trainlm');
-%net=newff(inputn,outputn, [5,12,4],{'tansig','tansig','tansig','purelin'},'trainlm','learngdm','mse');
-
-
- net.trainParam.epochs=600;
+net.trainParam.epochs=600;
 net.trainParam.lr=0.1;%(0.01-0.8)
  net.trainParam.goal=0.03;
 net.trainParam.max_fail = 10;

@@ -4,7 +4,7 @@ clear;
 
 A=xlsread('BB.xlsx'); %The data for traininig and testing
 
-inputdata=A(1:800,1:6);  %Training input data
+inputdata=A(1:750,1:6);  %Training input data
 outputdata=A(1:150,7); %Training output data
 
 inputdata1=inputdata';

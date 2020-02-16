@@ -2,20 +2,7 @@ clear all;
 clc
 close all;
 
-%  load data data
-%  A=xlsread('data.xlsx');
-
 A=xlsread('train1.xlsx');
-
-% C=xlsread('test1.xlsx');
-[~,n]=size(A);
-% Áã½×ÂË²¨
-%  for o=1:n
-%     A(:,o)=filtfilt(ones(1,2)/2,1,A(:,o));
- %  end
-% rowrank = randperm(size(A, 1)); 
-% %save('a1.mat','rowrank')
-% B = A(rowrank, :);
 
 input_train1=A(1:(end-50),1:9);
 output_train1=A(1:(end-50),10);
@@ -60,22 +47,7 @@ for i=1:m
 
 end
 BB=[datatest';I]; 
-% for i=1:m
-%     switch BB(end,i)
-%         case 1
-%         
-% an(:,i)=objfun1(input_test(:,i));
-% 
-%         case 2
-%             
-% an(:,i)=objfun2(input_test(:,i));
-% 
-%  case 3
-%             
-% an(:,i)=objfun3(input_test(:,i));
-%             
-%     end
-% end
+
 for i=1:m
     if BB(end,i)==1
         an(:,i)=Elman1(BB(1:9,i));

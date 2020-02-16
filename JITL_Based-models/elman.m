@@ -6,14 +6,11 @@ clear
 
 %找出训练数据和预测数据
 A=xlsread('12.xlsx');
-[~,n]=size(A);
-rowrank = randperm(size(A, 1)); 
-B = A(rowrank, :);
-input_train1=B(2:350,1:9);
-output_train1=B(2:350,10);
+input_train1=A(2:350,1:9);
+output_train1=A(2:350,10);
 
-input_test1=B(351:400,1:9);
-output_test1=B(351:400,10);
+input_test1=A(351:400,1:9);
+output_test1=A(351:400,10);
 input_train=input_train1';
 input_test=input_test1';
 output_train=output_train1';
@@ -25,12 +22,7 @@ output_test=output_test1';
 
 %% BP网络训练
 % %初始化网络结构
-% net=newff(inputn,outputn,25);
-% minmax(inputn),[hiddennum,outputnum],{'logsig','purelin'}
 net=newelm(minmax(inputn),[25,1],{'tansig','purelin'});
-%net=newff(inputn,outputn, [5,12,4],{'tansig','tansig','tansig','purelin'},'trainlm','learngdm','mse');
-
-
 net.trainparam.show=100;%每迭代100次显示1次
 net.trainparam.epochs=1000;%最大迭代次数2000
 net.trainparam.goal=0.1;%迭代目标
